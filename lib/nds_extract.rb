@@ -82,8 +82,13 @@ def movies_with_directors_set(source)
   while index < source.length do 
     director_name = source[index][:name]
     movies = source[index][:movies]
-    if !aoh[movies]
-      aoh[movies] = movies_with_director_key(director_name, movies)
+    movie_index = 0
+    while movie_index < movies do 
+      movie = movies[movie_index]
+      if !aoh[movie]
+        aoh[movie] = movies_with_director_key(director_name, movie)
+      end
+      movie_index += 1
     end
     index += 1
   end
