@@ -49,7 +49,7 @@ def movies_with_director_key(name, movies_collection)
   aoh = []
   index = 0 
   while index < movies_collection.length do 
-    aoh.push(movie_with_director_name(movies_collection[index]))
+    aoh.push(movie_with_director_name(name, movies_collection[index]))
   end
   aoh
 end
