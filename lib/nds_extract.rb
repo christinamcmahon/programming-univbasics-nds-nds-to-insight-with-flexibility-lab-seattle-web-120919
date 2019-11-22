@@ -76,23 +76,16 @@ def movies_with_directors_set(source)
   # INPUT:
   # * source: An Array of Hashes containing director information including :name and :movies
   # RETURN:
-  # Array of Hashes containing all of a director's movies. Each movie will need to have a :director_name key added to it.
-  aoh = []
+  # Array of Arrays containing all of a director's movies. Each movie will need to have a :director_name key added to it.
+  aoa = []
   index = 0 
   while index < source.length do 
     director_name = source[index][:name]
     movies = source[index][:movies]
-    movie_index = 0
-    while movie_index < movies do 
-      movie = movies[movie_index][:title]
-      if !aoh[movie]
-        aoh[movie] = movies_with_director_key(director_name, movie)
-      end
-      movie_index += 1
-    end
+    aoa.push(movies_with_director_key(director_name, movies))
     index += 1
   end
-  aoh
+  aoa
 end
 
 # ----------------    End of Your Code Region --------------------
