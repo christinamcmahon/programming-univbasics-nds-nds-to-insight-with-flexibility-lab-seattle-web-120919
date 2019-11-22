@@ -84,7 +84,7 @@ def movies_with_directors_set(source)
     movies = source[index][:movies]
     movie_index = 0
     while movie_index < movies do 
-      movie = movies[movie_index]
+      movie = movies[movie_index][:title]
       if !aoh[movie]
         aoh[movie] = movies_with_director_key(director_name, movie)
       end
